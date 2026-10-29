@@ -1,4 +1,6 @@
-import os, json, joblib
+import os, sys, json, joblib
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import pandas as pd
 from src.data_validation import validate_property_input
 from src.preprocess import engineer_features
@@ -6,12 +8,35 @@ from src.financials import calculate_appreciation, calculate_net_investment_retu
 
 class PropertyPredictionService:
     def __init__(self, bundle_path="models/estateiq_pipeline.pkl", report_path="models/evaluation_report.json"):
-        self.bundle = joblib.load(bundle_path)
-        self.reg_pipeline = self.bundle["reg_pipeline"]
-        self.train_stats = self.bundle["train_stats"]
-        self.all_features = self.bundle["all_features"]
-        self.conformal = self.bundle["conformal"]
-        self.eval_report = json.load(open(report_path)) if os.path.exists(report_path) else {}
+        self.bundle_path = bundle_path
+        self.report_path = report_path
+        self._load_or_self_heal()
+
+    def _load_or_self_heal(self):
+        needs_rebuild = False
+        if not os.path.exists(self.bundle_path):
+            needs_rebuild = True
+        else:
+            try:
+                self.bundle = joblib.load(self.bundle_path)
+                self.reg_pipeline = self.bundle["reg_pipeline"]
+                self.train_stats = self.bundle["train_stats"]
+                self.all_features = self.bundle["all_features"]
+                self.conformal = self.bundle["conformal"]
+            except Exception as exc:
+                print(f"[SELF-HEAL] Pickle version mismatch detected ({type(exc).__name__}: {exc}). Rebuilding pipeline natively...")
+                needs_rebuild = True
+
+        if needs_rebuild:
+            from src.train import train_and_evaluate
+            train_and_evaluate()
+            self.bundle = joblib.load(self.bundle_path)
+            self.reg_pipeline = self.bundle["reg_pipeline"]
+            self.train_stats = self.bundle["train_stats"]
+            self.all_features = self.bundle["all_features"]
+            self.conformal = self.bundle["conformal"]
+
+        self.eval_report = json.load(open(self.report_path)) if os.path.exists(self.report_path) else {}
 
     def predict_property(self, property_input, cashflow_params=None, horizon_years=5):
         is_valid, errors, warnings = validate_property_input(property_input, self.train_stats)
@@ -23,7 +48,14 @@ class PropertyPredictionService:
         X_infer = feat_df[self.all_features]
 
         current_price = float(feat_df["Price_in_Lakhs"].iloc[0])
-        pred_5y = max(float(self.reg_pipeline.predict(X_infer)[0]), current_price * 0.5)
+        try:
+            pred_5y = max(float(self.reg_pipeline.predict(X_infer)[0]), current_price * 0.5)
+        except Exception:
+            from src.train import train_and_evaluate
+            train_and_evaluate()
+            self._load_or_self_heal()
+            pred_5y = max(float(self.reg_pipeline.predict(X_infer)[0]), current_price * 0.5)
+
         pps = float(feat_df["Price_per_SqFt"].iloc[0])
         city_med_pps = float(feat_df["City_Train_Median_PPS"].iloc[0])
 
@@ -49,7 +81,11 @@ class PropertyPredictionService:
             cf.get("gross_rental_yield_pct"), cf.get("stamp_duty_registration_pct"),
             cf.get("annual_maintenance_tax_pct"), cf.get("vacancy_rate_pct"), cf.get("exit_brokerage_tax_pct")
         )
-        verdict = evaluate_investment_verdict(current_price, pps, city_med_pps, appreciation["annualized_appreciation_pct"], uncertainty["half_width_80_pct"], warnings, net_roi)
+        verdict = evaluate_investment_verdict(
+            current_price, pps, city_med_pps,
+            appreciation["annualized_appreciation_pct"], uncertainty["half_width_80_pct"],
+            warnings, net_roi
+        )
 
         return {
             "is_valid": True, "errors": [], "warnings": warnings,
