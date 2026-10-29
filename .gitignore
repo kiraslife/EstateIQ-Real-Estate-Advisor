@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+mlruns/
+mlflow.db
+cleanup_and_docs.py
+data/india_housing_prices.csv
+.DS_Store
+.vscode/

@@ -1,0 +1,1069 @@
+{
+  "timestamp": "2026-10-28 11:46 IST",
+  "splits": {
+    "train_records": 150000,
+    "calibration_records": 50000,
+    "holdout_test_records": 50000
+  },
+  "baselines_on_holdout": {
+    "global_median": {
+      "mae_lakhs": 175.7172,
+      "rmse_lakhs": 203.915,
+      "r2": -0.0001,
+      "mape_pct": 123.8193
+    },
+    "city_type_comparable": {
+      "mae_lakhs": 19.8602,
+      "rmse_lakhs": 28.8634,
+      "r2": 0.98,
+      "mape_pct": 5.144
+    }
+  },
+  "legacy_before_repair": {
+    "rmse_lakhs": 0.8485,
+    "r2": 1.0,
+    "note": "Leaked pre-split target multiplier formula"
+  },
+  "repaired_on_holdout": {
+    "mae_lakhs": 2.3124,
+    "rmse_lakhs": 3.0999,
+    "r2": 0.9998,
+    "mape_pct": 0.8372
+  },
+  "conformal": {
+    "q80_rel_raw": 0.0176,
+    "q80_rel_effective": 0.035,
+    "q90_rel_effective": 0.05,
+    "empirical_coverage_80_raw_pct": 80.01,
+    "empirical_coverage_80_eff_pct": 94.89,
+    "methodology": "Split-Conformal Relative Residual Quantiles calibrated on independent 20% holdout split"
+  },
+  "segment_by_type": [
+    {
+      "Segment": "Apartment",
+      "Count": 16704,
+      "mae_lakhs": 2.3024,
+      "rmse_lakhs": 3.0754,
+      "r2": 0.9998,
+      "mape_pct": 0.8661
+    },
+    {
+      "Segment": "Independent House",
+      "Count": 16607,
+      "mae_lakhs": 2.2664,
+      "rmse_lakhs": 3.0396,
+      "r2": 0.9998,
+      "mape_pct": 0.8155
+    },
+    {
+      "Segment": "Villa",
+      "Count": 16689,
+      "mae_lakhs": 2.3683,
+      "rmse_lakhs": 3.1825,
+      "r2": 0.9998,
+      "mape_pct": 0.83
+    }
+  ],
+  "holdout_plot_samples": [
+    {
+      "Actual_5Y_Lakhs": 622.27,
+      "Predicted_5Y_Lakhs": 620.1500244140625,
+      "Residual_Lakhs": 2.12
+    },
+    {
+      "Actual_5Y_Lakhs": 136.15,
+      "Predicted_5Y_Lakhs": 134.8800048828125,
+      "Residual_Lakhs": 1.27
+    },
+    {
+      "Actual_5Y_Lakhs": 471.91,
+      "Predicted_5Y_Lakhs": 471.3399963378906,
+      "Residual_Lakhs": 0.57
+    },
+    {
+      "Actual_5Y_Lakhs": 329.66,
+      "Predicted_5Y_Lakhs": 331.1099853515625,
+      "Residual_Lakhs": -1.45
+    },
+    {
+      "Actual_5Y_Lakhs": 16.49,
+      "Predicted_5Y_Lakhs": 17.75,
+      "Residual_Lakhs": -1.26
+    },
+    {
+      "Actual_5Y_Lakhs": 449.26,
+      "Predicted_5Y_Lakhs": 449.7300109863281,
+      "Residual_Lakhs": -0.47
+    },
+    {
+      "Actual_5Y_Lakhs": 575.08,
+      "Predicted_5Y_Lakhs": 578.780029296875,
+      "Residual_Lakhs": -3.7
+    },
+    {
+      "Actual_5Y_Lakhs": 346.63,
+      "Predicted_5Y_Lakhs": 346.3900146484375,
+      "Residual_Lakhs": 0.24
+    },
+    {
+      "Actual_5Y_Lakhs": 559.69,
+      "Predicted_5Y_Lakhs": 566.25,
+      "Residual_Lakhs": -6.56
+    },
+    {
+      "Actual_5Y_Lakhs": 617.42,
+      "Predicted_5Y_Lakhs": 609.8699951171875,
+      "Residual_Lakhs": 7.55
+    },
+    {
+      "Actual_5Y_Lakhs": 154.4,
+      "Predicted_5Y_Lakhs": 156.5500030517578,
+      "Residual_Lakhs": -2.15
+    },
+    {
+      "Actual_5Y_Lakhs": 327.17,
+      "Predicted_5Y_Lakhs": 318.7200012207031,
+      "Residual_Lakhs": 8.45
+    },
+    {
+      "Actual_5Y_Lakhs": 687.57,
+      "Predicted_5Y_Lakhs": 688.3499755859375,
+      "Residual_Lakhs": -0.78
+    },
+    {
+      "Actual_5Y_Lakhs": 567.75,
+      "Predicted_5Y_Lakhs": 569.8200073242188,
+      "Residual_Lakhs": -2.07
+    },
+    {
+      "Actual_5Y_Lakhs": 194.3,
+      "Predicted_5Y_Lakhs": 192.27999877929688,
+      "Residual_Lakhs": 2.02
+    },
+    {
+      "Actual_5Y_Lakhs": 329.96,
+      "Predicted_5Y_Lakhs": 330.2699890136719,
+      "Residual_Lakhs": -0.31
+    },
+    {
+      "Actual_5Y_Lakhs": 250.54,
+      "Predicted_5Y_Lakhs": 247.33999633789062,
+      "Residual_Lakhs": 3.2
+    },
+    {
+      "Actual_5Y_Lakhs": 45.65,
+      "Predicted_5Y_Lakhs": 44.22999954223633,
+      "Residual_Lakhs": 1.42
+    },
+    {
+      "Actual_5Y_Lakhs": 73.14,
+      "Predicted_5Y_Lakhs": 73.05999755859375,
+      "Residual_Lakhs": 0.08
+    },
+    {
+      "Actual_5Y_Lakhs": 295.62,
+      "Predicted_5Y_Lakhs": 296.5299987792969,
+      "Residual_Lakhs": -0.91
+    },
+    {
+      "Actual_5Y_Lakhs": 286.89,
+      "Predicted_5Y_Lakhs": 291.05999755859375,
+      "Residual_Lakhs": -4.17
+    },
+    {
+      "Actual_5Y_Lakhs": 587.9,
+      "Predicted_5Y_Lakhs": 585.6500244140625,
+      "Residual_Lakhs": 2.25
+    },
+    {
+      "Actual_5Y_Lakhs": 384.01,
+      "Predicted_5Y_Lakhs": 386.1300048828125,
+      "Residual_Lakhs": -2.12
+    },
+    {
+      "Actual_5Y_Lakhs": 549.64,
+      "Predicted_5Y_Lakhs": 556.1699829101562,
+      "Residual_Lakhs": -6.53
+    },
+    {
+      "Actual_5Y_Lakhs": 506.05,
+      "Predicted_5Y_Lakhs": 509.94000244140625,
+      "Residual_Lakhs": -3.89
+    },
+    {
+      "Actual_5Y_Lakhs": 301.22,
+      "Predicted_5Y_Lakhs": 302.70001220703125,
+      "Residual_Lakhs": -1.48
+    },
+    {
+      "Actual_5Y_Lakhs": 213.38,
+      "Predicted_5Y_Lakhs": 216.22000122070312,
+      "Residual_Lakhs": -2.84
+    },
+    {
+      "Actual_5Y_Lakhs": 549.66,
+      "Predicted_5Y_Lakhs": 550.4500122070312,
+      "Residual_Lakhs": -0.79
+    },
+    {
+      "Actual_5Y_Lakhs": 475.7,
+      "Predicted_5Y_Lakhs": 474.9200134277344,
+      "Residual_Lakhs": 0.78
+    },
+    {
+      "Actual_5Y_Lakhs": 391.46,
+      "Predicted_5Y_Lakhs": 388.0899963378906,
+      "Residual_Lakhs": 3.37
+    },
+    {
+      "Actual_5Y_Lakhs": 56.41,
+      "Predicted_5Y_Lakhs": 57.599998474121094,
+      "Residual_Lakhs": -1.19
+    },
+    {
+      "Actual_5Y_Lakhs": 253.19,
+      "Predicted_5Y_Lakhs": 250.72999572753906,
+      "Residual_Lakhs": 2.46
+    },
+    {
+      "Actual_5Y_Lakhs": 515.84,
+      "Predicted_5Y_Lakhs": 516.8900146484375,
+      "Residual_Lakhs": -1.05
+    },
+    {
+      "Actual_5Y_Lakhs": 216.87,
+      "Predicted_5Y_Lakhs": 214.5399932861328,
+      "Residual_Lakhs": 2.33
+    },
+    {
+      "Actual_5Y_Lakhs": 611.97,
+      "Predicted_5Y_Lakhs": 606.3400268554688,
+      "Residual_Lakhs": 5.63
+    },
+    {
+      "Actual_5Y_Lakhs": 544.97,
+      "Predicted_5Y_Lakhs": 544.5499877929688,
+      "Residual_Lakhs": 0.42
+    },
+    {
+      "Actual_5Y_Lakhs": 415.4,
+      "Predicted_5Y_Lakhs": 418.4599914550781,
+      "Residual_Lakhs": -3.06
+    },
+    {
+      "Actual_5Y_Lakhs": 640.2,
+      "Predicted_5Y_Lakhs": 644.6799926757812,
+      "Residual_Lakhs": -4.48
+    },
+    {
+      "Actual_5Y_Lakhs": 381.76,
+      "Predicted_5Y_Lakhs": 380.3699951171875,
+      "Residual_Lakhs": 1.39
+    },
+    {
+      "Actual_5Y_Lakhs": 52.03,
+      "Predicted_5Y_Lakhs": 52.88999938964844,
+      "Residual_Lakhs": -0.86
+    },
+    {
+      "Actual_5Y_Lakhs": 608.28,
+      "Predicted_5Y_Lakhs": 610.530029296875,
+      "Residual_Lakhs": -2.25
+    },
+    {
+      "Actual_5Y_Lakhs": 119.12,
+      "Predicted_5Y_Lakhs": 117.91999816894531,
+      "Residual_Lakhs": 1.2
+    },
+    {
+      "Actual_5Y_Lakhs": 675.17,
+      "Predicted_5Y_Lakhs": 678.6099853515625,
+      "Residual_Lakhs": -3.44
+    },
+    {
+      "Actual_5Y_Lakhs": 487.06,
+      "Predicted_5Y_Lakhs": 488.6700134277344,
+      "Residual_Lakhs": -1.61
+    },
+    {
+      "Actual_5Y_Lakhs": 582.25,
+      "Predicted_5Y_Lakhs": 584.6400146484375,
+      "Residual_Lakhs": -2.39
+    },
+    {
+      "Actual_5Y_Lakhs": 648.82,
+      "Predicted_5Y_Lakhs": 654.9199829101562,
+      "Residual_Lakhs": -6.1
+    },
+    {
+      "Actual_5Y_Lakhs": 473.72,
+      "Predicted_5Y_Lakhs": 470.2099914550781,
+      "Residual_Lakhs": 3.51
+    },
+    {
+      "Actual_5Y_Lakhs": 423.11,
+      "Predicted_5Y_Lakhs": 420.4800109863281,
+      "Residual_Lakhs": 2.63
+    },
+    {
+      "Actual_5Y_Lakhs": 449.15,
+      "Predicted_5Y_Lakhs": 449.7900085449219,
+      "Residual_Lakhs": -0.64
+    },
+    {
+      "Actual_5Y_Lakhs": 610.94,
+      "Predicted_5Y_Lakhs": 614.1099853515625,
+      "Residual_Lakhs": -3.17
+    },
+    {
+      "Actual_5Y_Lakhs": 108.88,
+      "Predicted_5Y_Lakhs": 110.70999908447266,
+      "Residual_Lakhs": -1.83
+    },
+    {
+      "Actual_5Y_Lakhs": 595.12,
+      "Predicted_5Y_Lakhs": 598.1400146484375,
+      "Residual_Lakhs": -3.02
+    },
+    {
+      "Actual_5Y_Lakhs": 18.45,
+      "Predicted_5Y_Lakhs": 16.959999084472656,
+      "Residual_Lakhs": 1.49
+    },
+    {
+      "Actual_5Y_Lakhs": 745.41,
+      "Predicted_5Y_Lakhs": 743.52001953125,
+      "Residual_Lakhs": 1.89
+    },
+    {
+      "Actual_5Y_Lakhs": 179.3,
+      "Predicted_5Y_Lakhs": 179.44000244140625,
+      "Residual_Lakhs": -0.14
+    },
+    {
+      "Actual_5Y_Lakhs": 399.72,
+      "Predicted_5Y_Lakhs": 398.67999267578125,
+      "Residual_Lakhs": 1.04
+    },
+    {
+      "Actual_5Y_Lakhs": 529.31,
+      "Predicted_5Y_Lakhs": 523.5499877929688,
+      "Residual_Lakhs": 5.76
+    },
+    {
+      "Actual_5Y_Lakhs": 98.48,
+      "Predicted_5Y_Lakhs": 97.55999755859375,
+      "Residual_Lakhs": 0.92
+    },
+    {
+      "Actual_5Y_Lakhs": 452.35,
+      "Predicted_5Y_Lakhs": 453.9100036621094,
+      "Residual_Lakhs": -1.56
+    },
+    {
+      "Actual_5Y_Lakhs": 25.1,
+      "Predicted_5Y_Lakhs": 23.68000030517578,
+      "Residual_Lakhs": 1.42
+    },
+    {
+      "Actual_5Y_Lakhs": 778.39,
+      "Predicted_5Y_Lakhs": 780.9299926757812,
+      "Residual_Lakhs": -2.54
+    },
+    {
+      "Actual_5Y_Lakhs": 37.71,
+      "Predicted_5Y_Lakhs": 36.27000045776367,
+      "Residual_Lakhs": 1.44
+    },
+    {
+      "Actual_5Y_Lakhs": 716.52,
+      "Predicted_5Y_Lakhs": 719.8300170898438,
+      "Residual_Lakhs": -3.31
+    },
+    {
+      "Actual_5Y_Lakhs": 82.14,
+      "Predicted_5Y_Lakhs": 81.80000305175781,
+      "Residual_Lakhs": 0.34
+    },
+    {
+      "Actual_5Y_Lakhs": 44.19,
+      "Predicted_5Y_Lakhs": 44.29999923706055,
+      "Residual_Lakhs": -0.11
+    },
+    {
+      "Actual_5Y_Lakhs": 422.44,
+      "Predicted_5Y_Lakhs": 415.760009765625,
+      "Residual_Lakhs": 6.68
+    },
+    {
+      "Actual_5Y_Lakhs": 529.47,
+      "Predicted_5Y_Lakhs": 532.8300170898438,
+      "Residual_Lakhs": -3.36
+    },
+    {
+      "Actual_5Y_Lakhs": 377.14,
+      "Predicted_5Y_Lakhs": 379.6600036621094,
+      "Residual_Lakhs": -2.52
+    },
+    {
+      "Actual_5Y_Lakhs": 534.12,
+      "Predicted_5Y_Lakhs": 536.0999755859375,
+      "Residual_Lakhs": -1.98
+    },
+    {
+      "Actual_5Y_Lakhs": 326.3,
+      "Predicted_5Y_Lakhs": 323.2799987792969,
+      "Residual_Lakhs": 3.02
+    },
+    {
+      "Actual_5Y_Lakhs": 319.37,
+      "Predicted_5Y_Lakhs": 318.8399963378906,
+      "Residual_Lakhs": 0.53
+    },
+    {
+      "Actual_5Y_Lakhs": 648.94,
+      "Predicted_5Y_Lakhs": 647.5800170898438,
+      "Residual_Lakhs": 1.36
+    },
+    {
+      "Actual_5Y_Lakhs": 410.3,
+      "Predicted_5Y_Lakhs": 406.8999938964844,
+      "Residual_Lakhs": 3.4
+    },
+    {
+      "Actual_5Y_Lakhs": 52.52,
+      "Predicted_5Y_Lakhs": 51.790000915527344,
+      "Residual_Lakhs": 0.73
+    },
+    {
+      "Actual_5Y_Lakhs": 470.0,
+      "Predicted_5Y_Lakhs": 474.6600036621094,
+      "Residual_Lakhs": -4.66
+    },
+    {
+      "Actual_5Y_Lakhs": 238.37,
+      "Predicted_5Y_Lakhs": 240.22999572753906,
+      "Residual_Lakhs": -1.86
+    },
+    {
+      "Actual_5Y_Lakhs": 404.32,
+      "Predicted_5Y_Lakhs": 406.0400085449219,
+      "Residual_Lakhs": -1.72
+    },
+    {
+      "Actual_5Y_Lakhs": 421.67,
+      "Predicted_5Y_Lakhs": 423.67999267578125,
+      "Residual_Lakhs": -2.01
+    },
+    {
+      "Actual_5Y_Lakhs": 146.51,
+      "Predicted_5Y_Lakhs": 146.7100067138672,
+      "Residual_Lakhs": -0.2
+    },
+    {
+      "Actual_5Y_Lakhs": 345.02,
+      "Predicted_5Y_Lakhs": 342.2799987792969,
+      "Residual_Lakhs": 2.74
+    },
+    {
+      "Actual_5Y_Lakhs": 577.16,
+      "Predicted_5Y_Lakhs": 577.9400024414062,
+      "Residual_Lakhs": -0.78
+    },
+    {
+      "Actual_5Y_Lakhs": 304.66,
+      "Predicted_5Y_Lakhs": 305.79998779296875,
+      "Residual_Lakhs": -1.14
+    },
+    {
+      "Actual_5Y_Lakhs": 312.1,
+      "Predicted_5Y_Lakhs": 312.70001220703125,
+      "Residual_Lakhs": -0.6
+    },
+    {
+      "Actual_5Y_Lakhs": 349.24,
+      "Predicted_5Y_Lakhs": 348.9599914550781,
+      "Residual_Lakhs": 0.28
+    },
+    {
+      "Actual_5Y_Lakhs": 465.5,
+      "Predicted_5Y_Lakhs": 466.70001220703125,
+      "Residual_Lakhs": -1.2
+    },
+    {
+      "Actual_5Y_Lakhs": 697.88,
+      "Predicted_5Y_Lakhs": 694.760009765625,
+      "Residual_Lakhs": 3.12
+    },
+    {
+      "Actual_5Y_Lakhs": 303.95,
+      "Predicted_5Y_Lakhs": 307.6400146484375,
+      "Residual_Lakhs": -3.69
+    },
+    {
+      "Actual_5Y_Lakhs": 537.57,
+      "Predicted_5Y_Lakhs": 538.0700073242188,
+      "Residual_Lakhs": -0.5
+    },
+    {
+      "Actual_5Y_Lakhs": 110.02,
+      "Predicted_5Y_Lakhs": 110.83999633789062,
+      "Residual_Lakhs": -0.82
+    },
+    {
+      "Actual_5Y_Lakhs": 251.4,
+      "Predicted_5Y_Lakhs": 250.02000427246094,
+      "Residual_Lakhs": 1.38
+    },
+    {
+      "Actual_5Y_Lakhs": 641.25,
+      "Predicted_5Y_Lakhs": 640.0499877929688,
+      "Residual_Lakhs": 1.2
+    },
+    {
+      "Actual_5Y_Lakhs": 579.13,
+      "Predicted_5Y_Lakhs": 578.3800048828125,
+      "Residual_Lakhs": 0.75
+    },
+    {
+      "Actual_5Y_Lakhs": 421.18,
+      "Predicted_5Y_Lakhs": 417.6400146484375,
+      "Residual_Lakhs": 3.54
+    },
+    {
+      "Actual_5Y_Lakhs": 257.55,
+      "Predicted_5Y_Lakhs": 259.45001220703125,
+      "Residual_Lakhs": -1.9
+    },
+    {
+      "Actual_5Y_Lakhs": 312.86,
+      "Predicted_5Y_Lakhs": 313.7300109863281,
+      "Residual_Lakhs": -0.87
+    },
+    {
+      "Actual_5Y_Lakhs": 481.92,
+      "Predicted_5Y_Lakhs": 480.5199890136719,
+      "Residual_Lakhs": 1.4
+    },
+    {
+      "Actual_5Y_Lakhs": 652.75,
+      "Predicted_5Y_Lakhs": 653.4400024414062,
+      "Residual_Lakhs": -0.69
+    },
+    {
+      "Actual_5Y_Lakhs": 520.23,
+      "Predicted_5Y_Lakhs": 521.72998046875,
+      "Residual_Lakhs": -1.5
+    },
+    {
+      "Actual_5Y_Lakhs": 276.2,
+      "Predicted_5Y_Lakhs": 276.80999755859375,
+      "Residual_Lakhs": -0.61
+    },
+    {
+      "Actual_5Y_Lakhs": 408.53,
+      "Predicted_5Y_Lakhs": 407.3900146484375,
+      "Residual_Lakhs": 1.14
+    },
+    {
+      "Actual_5Y_Lakhs": 504.85,
+      "Predicted_5Y_Lakhs": 501.5199890136719,
+      "Residual_Lakhs": 3.33
+    },
+    {
+      "Actual_5Y_Lakhs": 421.88,
+      "Predicted_5Y_Lakhs": 422.8599853515625,
+      "Residual_Lakhs": -0.98
+    },
+    {
+      "Actual_5Y_Lakhs": 724.58,
+      "Predicted_5Y_Lakhs": 719.8300170898438,
+      "Residual_Lakhs": 4.75
+    },
+    {
+      "Actual_5Y_Lakhs": 22.68,
+      "Predicted_5Y_Lakhs": 22.93000030517578,
+      "Residual_Lakhs": -0.25
+    },
+    {
+      "Actual_5Y_Lakhs": 385.59,
+      "Predicted_5Y_Lakhs": 385.3599853515625,
+      "Residual_Lakhs": 0.23
+    },
+    {
+      "Actual_5Y_Lakhs": 437.28,
+      "Predicted_5Y_Lakhs": 436.6400146484375,
+      "Residual_Lakhs": 0.64
+    },
+    {
+      "Actual_5Y_Lakhs": 64.22,
+      "Predicted_5Y_Lakhs": 62.099998474121094,
+      "Residual_Lakhs": 2.12
+    },
+    {
+      "Actual_5Y_Lakhs": 687.68,
+      "Predicted_5Y_Lakhs": 684.4299926757812,
+      "Residual_Lakhs": 3.25
+    },
+    {
+      "Actual_5Y_Lakhs": 481.52,
+      "Predicted_5Y_Lakhs": 483.55999755859375,
+      "Residual_Lakhs": -2.04
+    },
+    {
+      "Actual_5Y_Lakhs": 583.55,
+      "Predicted_5Y_Lakhs": 580.9400024414062,
+      "Residual_Lakhs": 2.61
+    },
+    {
+      "Actual_5Y_Lakhs": 709.87,
+      "Predicted_5Y_Lakhs": 710.7100219726562,
+      "Residual_Lakhs": -0.84
+    },
+    {
+      "Actual_5Y_Lakhs": 150.35,
+      "Predicted_5Y_Lakhs": 153.19000244140625,
+      "Residual_Lakhs": -2.84
+    },
+    {
+      "Actual_5Y_Lakhs": 439.07,
+      "Predicted_5Y_Lakhs": 438.7900085449219,
+      "Residual_Lakhs": 0.28
+    },
+    {
+      "Actual_5Y_Lakhs": 271.59,
+      "Predicted_5Y_Lakhs": 274.1600036621094,
+      "Residual_Lakhs": -2.57
+    },
+    {
+      "Actual_5Y_Lakhs": 193.62,
+      "Predicted_5Y_Lakhs": 190.91000366210938,
+      "Residual_Lakhs": 2.71
+    },
+    {
+      "Actual_5Y_Lakhs": 226.22,
+      "Predicted_5Y_Lakhs": 225.72000122070312,
+      "Residual_Lakhs": 0.5
+    },
+    {
+      "Actual_5Y_Lakhs": 413.48,
+      "Predicted_5Y_Lakhs": 410.4800109863281,
+      "Residual_Lakhs": 3.0
+    },
+    {
+      "Actual_5Y_Lakhs": 42.78,
+      "Predicted_5Y_Lakhs": 42.290000915527344,
+      "Residual_Lakhs": 0.49
+    },
+    {
+      "Actual_5Y_Lakhs": 576.63,
+      "Predicted_5Y_Lakhs": 581.1199951171875,
+      "Residual_Lakhs": -4.49
+    },
+    {
+      "Actual_5Y_Lakhs": 238.02,
+      "Predicted_5Y_Lakhs": 237.1199951171875,
+      "Residual_Lakhs": 0.9
+    },
+    {
+      "Actual_5Y_Lakhs": 675.96,
+      "Predicted_5Y_Lakhs": 679.7000122070312,
+      "Residual_Lakhs": -3.74
+    },
+    {
+      "Actual_5Y_Lakhs": 325.76,
+      "Predicted_5Y_Lakhs": 325.4800109863281,
+      "Residual_Lakhs": 0.28
+    },
+    {
+      "Actual_5Y_Lakhs": 17.39,
+      "Predicted_5Y_Lakhs": 19.469999313354492,
+      "Residual_Lakhs": -2.08
+    },
+    {
+      "Actual_5Y_Lakhs": 213.03,
+      "Predicted_5Y_Lakhs": 212.1300048828125,
+      "Residual_Lakhs": 0.9
+    },
+    {
+      "Actual_5Y_Lakhs": 486.67,
+      "Predicted_5Y_Lakhs": 489.7699890136719,
+      "Residual_Lakhs": -3.1
+    },
+    {
+      "Actual_5Y_Lakhs": 402.33,
+      "Predicted_5Y_Lakhs": 403.6000061035156,
+      "Residual_Lakhs": -1.27
+    },
+    {
+      "Actual_5Y_Lakhs": 78.37,
+      "Predicted_5Y_Lakhs": 76.87999725341797,
+      "Residual_Lakhs": 1.49
+    },
+    {
+      "Actual_5Y_Lakhs": 378.04,
+      "Predicted_5Y_Lakhs": 373.7799987792969,
+      "Residual_Lakhs": 4.26
+    },
+    {
+      "Actual_5Y_Lakhs": 120.18,
+      "Predicted_5Y_Lakhs": 119.47000122070312,
+      "Residual_Lakhs": 0.71
+    },
+    {
+      "Actual_5Y_Lakhs": 104.78,
+      "Predicted_5Y_Lakhs": 106.62000274658203,
+      "Residual_Lakhs": -1.84
+    },
+    {
+      "Actual_5Y_Lakhs": 663.56,
+      "Predicted_5Y_Lakhs": 660.3599853515625,
+      "Residual_Lakhs": 3.2
+    },
+    {
+      "Actual_5Y_Lakhs": 429.77,
+      "Predicted_5Y_Lakhs": 429.07000732421875,
+      "Residual_Lakhs": 0.7
+    },
+    {
+      "Actual_5Y_Lakhs": 484.42,
+      "Predicted_5Y_Lakhs": 483.6099853515625,
+      "Residual_Lakhs": 0.81
+    },
+    {
+      "Actual_5Y_Lakhs": 86.04,
+      "Predicted_5Y_Lakhs": 87.88999938964844,
+      "Residual_Lakhs": -1.85
+    },
+    {
+      "Actual_5Y_Lakhs": 138.23,
+      "Predicted_5Y_Lakhs": 136.69000244140625,
+      "Residual_Lakhs": 1.54
+    },
+    {
+      "Actual_5Y_Lakhs": 271.96,
+      "Predicted_5Y_Lakhs": 271.29998779296875,
+      "Residual_Lakhs": 0.66
+    },
+    {
+      "Actual_5Y_Lakhs": 211.29,
+      "Predicted_5Y_Lakhs": 213.92999267578125,
+      "Residual_Lakhs": -2.64
+    },
+    {
+      "Actual_5Y_Lakhs": 207.38,
+      "Predicted_5Y_Lakhs": 208.38999938964844,
+      "Residual_Lakhs": -1.01
+    },
+    {
+      "Actual_5Y_Lakhs": 19.92,
+      "Predicted_5Y_Lakhs": 21.950000762939453,
+      "Residual_Lakhs": -2.03
+    },
+    {
+      "Actual_5Y_Lakhs": 713.79,
+      "Predicted_5Y_Lakhs": 706.52001953125,
+      "Residual_Lakhs": 7.27
+    },
+    {
+      "Actual_5Y_Lakhs": 254.95,
+      "Predicted_5Y_Lakhs": 244.6699981689453,
+      "Residual_Lakhs": 10.28
+    },
+    {
+      "Actual_5Y_Lakhs": 456.37,
+      "Predicted_5Y_Lakhs": 451.8299865722656,
+      "Residual_Lakhs": 4.54
+    },
+    {
+      "Actual_5Y_Lakhs": 152.78,
+      "Predicted_5Y_Lakhs": 153.8699951171875,
+      "Residual_Lakhs": -1.09
+    },
+    {
+      "Actual_5Y_Lakhs": 337.72,
+      "Predicted_5Y_Lakhs": 339.760009765625,
+      "Residual_Lakhs": -2.04
+    },
+    {
+      "Actual_5Y_Lakhs": 564.44,
+      "Predicted_5Y_Lakhs": 563.7899780273438,
+      "Residual_Lakhs": 0.65
+    },
+    {
+      "Actual_5Y_Lakhs": 440.3,
+      "Predicted_5Y_Lakhs": 441.5400085449219,
+      "Residual_Lakhs": -1.24
+    },
+    {
+      "Actual_5Y_Lakhs": 603.46,
+      "Predicted_5Y_Lakhs": 593.4199829101562,
+      "Residual_Lakhs": 10.04
+    },
+    {
+      "Actual_5Y_Lakhs": 633.57,
+      "Predicted_5Y_Lakhs": 634.25,
+      "Residual_Lakhs": -0.68
+    },
+    {
+      "Actual_5Y_Lakhs": 578.51,
+      "Predicted_5Y_Lakhs": 577.6099853515625,
+      "Residual_Lakhs": 0.9
+    },
+    {
+      "Actual_5Y_Lakhs": 504.48,
+      "Predicted_5Y_Lakhs": 501.5199890136719,
+      "Residual_Lakhs": 2.96
+    },
+    {
+      "Actual_5Y_Lakhs": 308.71,
+      "Predicted_5Y_Lakhs": 309.79998779296875,
+      "Residual_Lakhs": -1.09
+    },
+    {
+      "Actual_5Y_Lakhs": 51.28,
+      "Predicted_5Y_Lakhs": 53.38999938964844,
+      "Residual_Lakhs": -2.11
+    },
+    {
+      "Actual_5Y_Lakhs": 154.55,
+      "Predicted_5Y_Lakhs": 158.58999633789062,
+      "Residual_Lakhs": -4.04
+    },
+    {
+      "Actual_5Y_Lakhs": 165.67,
+      "Predicted_5Y_Lakhs": 164.27000427246094,
+      "Residual_Lakhs": 1.4
+    },
+    {
+      "Actual_5Y_Lakhs": 205.48,
+      "Predicted_5Y_Lakhs": 205.83999633789062,
+      "Residual_Lakhs": -0.36
+    },
+    {
+      "Actual_5Y_Lakhs": 514.97,
+      "Predicted_5Y_Lakhs": 517.3699951171875,
+      "Residual_Lakhs": -2.4
+    },
+    {
+      "Actual_5Y_Lakhs": 493.69,
+      "Predicted_5Y_Lakhs": 492.760009765625,
+      "Residual_Lakhs": 0.93
+    },
+    {
+      "Actual_5Y_Lakhs": 558.77,
+      "Predicted_5Y_Lakhs": 559.8800048828125,
+      "Residual_Lakhs": -1.11
+    },
+    {
+      "Actual_5Y_Lakhs": 692.74,
+      "Predicted_5Y_Lakhs": 699.2999877929688,
+      "Residual_Lakhs": -6.56
+    },
+    {
+      "Actual_5Y_Lakhs": 84.18,
+      "Predicted_5Y_Lakhs": 84.61000061035156,
+      "Residual_Lakhs": -0.43
+    },
+    {
+      "Actual_5Y_Lakhs": 295.92,
+      "Predicted_5Y_Lakhs": 297.54998779296875,
+      "Residual_Lakhs": -1.63
+    },
+    {
+      "Actual_5Y_Lakhs": 545.96,
+      "Predicted_5Y_Lakhs": 550.1300048828125,
+      "Residual_Lakhs": -4.17
+    },
+    {
+      "Actual_5Y_Lakhs": 572.49,
+      "Predicted_5Y_Lakhs": 573.8800048828125,
+      "Residual_Lakhs": -1.39
+    },
+    {
+      "Actual_5Y_Lakhs": 720.75,
+      "Predicted_5Y_Lakhs": 721.510009765625,
+      "Residual_Lakhs": -0.76
+    },
+    {
+      "Actual_5Y_Lakhs": 720.83,
+      "Predicted_5Y_Lakhs": 721.260009765625,
+      "Residual_Lakhs": -0.43
+    },
+    {
+      "Actual_5Y_Lakhs": 110.77,
+      "Predicted_5Y_Lakhs": 108.33999633789062,
+      "Residual_Lakhs": 2.43
+    },
+    {
+      "Actual_5Y_Lakhs": 335.82,
+      "Predicted_5Y_Lakhs": 335.79998779296875,
+      "Residual_Lakhs": 0.02
+    },
+    {
+      "Actual_5Y_Lakhs": 48.45,
+      "Predicted_5Y_Lakhs": 48.13999938964844,
+      "Residual_Lakhs": 0.31
+    },
+    {
+      "Actual_5Y_Lakhs": 255.95,
+      "Predicted_5Y_Lakhs": 257.989990234375,
+      "Residual_Lakhs": -2.04
+    },
+    {
+      "Actual_5Y_Lakhs": 56.41,
+      "Predicted_5Y_Lakhs": 56.290000915527344,
+      "Residual_Lakhs": 0.12
+    },
+    {
+      "Actual_5Y_Lakhs": 419.53,
+      "Predicted_5Y_Lakhs": 421.05999755859375,
+      "Residual_Lakhs": -1.53
+    },
+    {
+      "Actual_5Y_Lakhs": 49.74,
+      "Predicted_5Y_Lakhs": 51.18000030517578,
+      "Residual_Lakhs": -1.44
+    },
+    {
+      "Actual_5Y_Lakhs": 600.13,
+      "Predicted_5Y_Lakhs": 609.510009765625,
+      "Residual_Lakhs": -9.38
+    },
+    {
+      "Actual_5Y_Lakhs": 54.12,
+      "Predicted_5Y_Lakhs": 55.40999984741211,
+      "Residual_Lakhs": -1.29
+    },
+    {
+      "Actual_5Y_Lakhs": 129.12,
+      "Predicted_5Y_Lakhs": 129.27999877929688,
+      "Residual_Lakhs": -0.16
+    },
+    {
+      "Actual_5Y_Lakhs": 275.78,
+      "Predicted_5Y_Lakhs": 276.79998779296875,
+      "Residual_Lakhs": -1.02
+    },
+    {
+      "Actual_5Y_Lakhs": 294.66,
+      "Predicted_5Y_Lakhs": 298.3999938964844,
+      "Residual_Lakhs": -3.74
+    },
+    {
+      "Actual_5Y_Lakhs": 90.15,
+      "Predicted_5Y_Lakhs": 89.83000183105469,
+      "Residual_Lakhs": 0.32
+    },
+    {
+      "Actual_5Y_Lakhs": 451.65,
+      "Predicted_5Y_Lakhs": 451.8399963378906,
+      "Residual_Lakhs": -0.19
+    },
+    {
+      "Actual_5Y_Lakhs": 358.38,
+      "Predicted_5Y_Lakhs": 358.0899963378906,
+      "Residual_Lakhs": 0.29
+    },
+    {
+      "Actual_5Y_Lakhs": 67.51,
+      "Predicted_5Y_Lakhs": 65.97000122070312,
+      "Residual_Lakhs": 1.54
+    },
+    {
+      "Actual_5Y_Lakhs": 225.66,
+      "Predicted_5Y_Lakhs": 225.3699951171875,
+      "Residual_Lakhs": 0.29
+    },
+    {
+      "Actual_5Y_Lakhs": 487.45,
+      "Predicted_5Y_Lakhs": 491.82000732421875,
+      "Residual_Lakhs": -4.37
+    },
+    {
+      "Actual_5Y_Lakhs": 34.32,
+      "Predicted_5Y_Lakhs": 33.310001373291016,
+      "Residual_Lakhs": 1.01
+    },
+    {
+      "Actual_5Y_Lakhs": 26.06,
+      "Predicted_5Y_Lakhs": 25.989999771118164,
+      "Residual_Lakhs": 0.07
+    },
+    {
+      "Actual_5Y_Lakhs": 710.21,
+      "Predicted_5Y_Lakhs": 710.0700073242188,
+      "Residual_Lakhs": 0.14
+    },
+    {
+      "Actual_5Y_Lakhs": 99.7,
+      "Predicted_5Y_Lakhs": 98.22000122070312,
+      "Residual_Lakhs": 1.48
+    },
+    {
+      "Actual_5Y_Lakhs": 199.39,
+      "Predicted_5Y_Lakhs": 199.9499969482422,
+      "Residual_Lakhs": -0.56
+    },
+    {
+      "Actual_5Y_Lakhs": 225.7,
+      "Predicted_5Y_Lakhs": 228.88999938964844,
+      "Residual_Lakhs": -3.19
+    },
+    {
+      "Actual_5Y_Lakhs": 275.28,
+      "Predicted_5Y_Lakhs": 276.75,
+      "Residual_Lakhs": -1.47
+    },
+    {
+      "Actual_5Y_Lakhs": 763.98,
+      "Predicted_5Y_Lakhs": 762.0,
+      "Residual_Lakhs": 1.98
+    },
+    {
+      "Actual_5Y_Lakhs": 687.86,
+      "Predicted_5Y_Lakhs": 682.989990234375,
+      "Residual_Lakhs": 4.87
+    },
+    {
+      "Actual_5Y_Lakhs": 357.55,
+      "Predicted_5Y_Lakhs": 357.1099853515625,
+      "Residual_Lakhs": 0.44
+    },
+    {
+      "Actual_5Y_Lakhs": 393.98,
+      "Predicted_5Y_Lakhs": 394.4700012207031,
+      "Residual_Lakhs": -0.49
+    },
+    {
+      "Actual_5Y_Lakhs": 197.16,
+      "Predicted_5Y_Lakhs": 200.00999450683594,
+      "Residual_Lakhs": -2.85
+    },
+    {
+      "Actual_5Y_Lakhs": 268.28,
+      "Predicted_5Y_Lakhs": 267.2300109863281,
+      "Residual_Lakhs": 1.05
+    },
+    {
+      "Actual_5Y_Lakhs": 338.45,
+      "Predicted_5Y_Lakhs": 338.6000061035156,
+      "Residual_Lakhs": -0.15
+    },
+    {
+      "Actual_5Y_Lakhs": 171.85,
+      "Predicted_5Y_Lakhs": 174.0,
+      "Residual_Lakhs": -2.15
+    },
+    {
+      "Actual_5Y_Lakhs": 229.56,
+      "Predicted_5Y_Lakhs": 231.07000732421875,
+      "Residual_Lakhs": -1.51
+    },
+    {
+      "Actual_5Y_Lakhs": 42.13,
+      "Predicted_5Y_Lakhs": 41.25,
+      "Residual_Lakhs": 0.88
+    }
+  ]
+}
