@@ -74,23 +74,7 @@ Evaluated on the **untouched 20% holdout test split (50,000 properties)**:
 
 ---
 
-## Quickstart & Local Execution
 
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-
-# 2. Run the 18-scenario unit & adversarial test suite
-python3 tests/run_tests.py
-
-# 3. Run the 25-variable controlled perturbation & Seen/Unseen audit
-python3 audit_all_variables.py
-
-# 4. Launch the EstateIQ Streamlit application
-streamlit run app.py
-```
-
----
 
 ## Data Provenance & Governance Disclosure
 
